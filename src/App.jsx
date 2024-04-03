@@ -1,7 +1,7 @@
 import React from 'react';
 import {Routes,Route,Link} from 'react-router-dom';
 import {Layout,Typography,space} from 'antd';
-import {Navbar,Exchanges,Homepage,News,Stocks,StockDetails,Learn,Trend,DemoChart,CommunityPost} from './components';
+import {Navbar,Exchanges,Homepage,News,Stocks,StockDetails,Learn,Trend,DemoChart,CommunityPost,Quiz,TechnicalAnalysis,Tutorials} from './components';
 import './App.css';
 
 const App = () => {
@@ -22,6 +22,9 @@ const App = () => {
             <Route path="/news" element={<News />} />
             <Route path="/learn" element={<Learn/>}/>
             <Route path="/communitypost" element={<CommunityPost/>}/>
+            <Route path="/tutorials" element={<Tutorials/>} />
+            <Route path="/technicalanalysis" element={<TechnicalAnalysis/>} />
+            <Route path="/quiz" element={<Quiz/>} />
             {/* <Route path="/stockverse" element={<MyStockVerse/>} /> */}
 
 </Routes>

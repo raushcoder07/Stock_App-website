@@ -9,5 +9,9 @@ export {default as Trend} from  "./Trend";
 export {default as DemoChart} from "./DemoChart"
 // export {default as MystockVerse} from "./MyStockVerse";
 export {default as CommunityPost} from "./CommunityPost"
+export {default as Quiz} from "./Quiz"
+export {default as TechnicalAnalysis} from "./TechnicalAnalysis"
+export {default as Tutorials} from "./Tutorials"
+
 
     

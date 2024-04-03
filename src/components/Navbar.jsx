@@ -43,9 +43,21 @@ const Navbar = () => {
           
          </SubMenu>
 
+         <SubMenu key="sub2" icon={<KeyOutlined />} title="Knowledge"> 
+
           <Menu.Item icon={<KeyOutlined/>}>
-            <Link to='/learn'>Learn</Link>
+            <Link to='/tutorials'> Tutorials</Link>
           </Menu.Item>
+          <Menu.Item icon={<KeyOutlined/>}>
+            <Link to='/technicalanalysis'>TechnicalAnalysis</Link>
+          </Menu.Item>
+          <Menu.Item icon={<KeyOutlined/>}>
+            <Link to='/quiz'>Quiz</Link>
+          </Menu.Item>
+
+
+         </SubMenu>
+
           <Menu.Item icon={<BulbOutlined/>}>
             <Link to='/news'>News</Link>
           </Menu.Item>
