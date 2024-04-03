@@ -7,6 +7,7 @@ export {default as StockDetails} from  "./StockDetails";
 export {default as Learn} from  "./Learn";
 export {default as Trend} from  "./Trend";
 export {default as DemoChart} from "./DemoChart"
-export {default as MystockVerse} from "./MyStockVerse";
+// export {default as MystockVerse} from "./MyStockVerse";
+export {default as CommunityPost} from "./CommunityPost"
 
     

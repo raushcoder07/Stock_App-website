@@ -52,6 +52,10 @@ const Navbar = () => {
           <Menu.Item icon={<UserOutlined/>}>
             <Link to='/mystockverse'>MyStockVerse</Link>
           </Menu.Item>
+          <Menu.Item icon={<UserOutlined/>}>
+            <Link to='/Communitypost'>CommunityPost</Link>
+          </Menu.Item>
+
 
 
      </Menu>
