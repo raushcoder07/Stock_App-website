@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Container, VStack, Input, Flex, Box } from '@chakra-ui/react';
+import { Container, HStack } from '@chakra-ui/react';
 import { Typography } from 'antd';
 import Loader from "./Loader";
 
@@ -14,7 +14,7 @@ const options = {
   }
 };
 
-function Stocks() {
+function Storhome() {
 
   const [stocks, setStocks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,8 +24,8 @@ function Stocks() {
     const fetchStocks = async () => {
       try {
         const response = await axios.request(options);
-        console.log(response.data);
-        setStocks(response.data.slice(200,299)); // Set stocks data in state
+        // console.log(response.data);
+        setStocks(response.data.slice(10, 19)); // Limit to first 10 stocks
         setLoading(false); // Set loading to false when data is fetched
       } catch (error) {
         console.error(error);
@@ -42,22 +42,19 @@ function Stocks() {
       <style>
         {`
         .stock-card {
-          background-color: #f0f0f0; /* Default card color */
-          border: 1px solid #ccc;
-          border-radius: 8px;
+          background-color: #ffffff;
+          border: 2px solid #007bff;
+          border-radius: 10px;
           padding: 20px;
-          width: calc(33% - 20px); /* Adjust the width as needed */
+          width: calc(33.33% - 40px); /* Adjust the width to fit three cards in one row */
           margin-right: 20px;
           margin-bottom: 20px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease-in-out;
         }
 
-        .stock-card:nth-child(2n) {
-          background-color: #f8f8f8; /* Alternate card color */
-        }
-
-        .stock-card:nth-child(3n) {
-          background-color: #e8e8e8; /* Alternate card color */
+        .stock-card:hover {
+          transform: translateY(-5px);
         }
 
         .stock-info {
@@ -70,27 +67,20 @@ function Stocks() {
           margin-bottom: 20px;
         }
 
-        .search-bar {
-          margin-bottom: 20px;
-        }
-
         .stock-cards-container {
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-between;
+          justify-content: space-between; /* Align items with space between */
         }
         `}
       </style>
-      <Title level={2} className="heading">Stocks Stats</Title>
-      <Box className="search-bar">
-        <Input placeholder="Search..." />
-      </Box>
+      {/* <Title level={2} className="heading">Top 10 Stocks</Title> */}
       {loading ? (
         <Loader />
       ) : error ? (
         <div>Error: {error.message}</div>
       ) : (
-        <VStack spacing="20px" className="stock-cards-container">
+        <HStack spacing="20px" className="stock-cards-container">
           {stocks.map((stock, index) => (
             <div className="stock-card" key={index}>
               <p className="stock-info">Company: {stock?.identifier}</p>
@@ -102,10 +92,10 @@ function Stocks() {
               <p className="stock-info">Last Update Time: {stock?.lastUpdateTime}</p>
             </div>
           ))}
-        </VStack>
+        </HStack>
       )}
     </Container>
   );
 };
 
-export default Stocks;
+export default Storhome;

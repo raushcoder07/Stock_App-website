@@ -3,6 +3,10 @@ import axios from 'axios';
 import { Container, HStack } from '@chakra-ui/react';
 import { Typography, Statistic } from 'antd'; // Importing Statistic from Ant Design
 import Loader from "./Loader";
+import Storhome from './Storhome';
+import { Link } from 'react-router-dom';
+import Newshome from './Newshome';
+import News from './News'
 
 const { Title } = Typography;
 
@@ -58,6 +62,18 @@ const Homepage = () => {
           </HStack>
         )}
       </Container>
+
+      <div className="home-heading-container">
+        <Title level={2} className="home-title" text-aling="centre">Top Stocks </Title>
+        <Title level={3} className="show-more"><Link to="/">Show more</Link></Title>
+      </div>
+      <Storhome simplified />
+
+      <div className="home-heading-container">
+        <Title level={2} className="home-title">Top 10 Stock News</Title>
+        <Title level={3} className="show-more"><Link to="/">Show more</Link></Title>
+      </div>
+      <News simplified />
     </>
   );
 };
